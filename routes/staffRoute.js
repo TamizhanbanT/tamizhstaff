@@ -23,7 +23,7 @@ router.get("/get-staff", async (req, res) => {
 })
 router.post("/delete-staff", async (req, res) => {
     try {
-        const staff = await staffModel.findOneAndDelete({ _id: req.body._id });
+        const staff = await staffModel.findOneAndDelete({ _id: req.body.staffId });
         if (!staff) {
             return res.status(404).json({ message: "Staff not found" });
         }
